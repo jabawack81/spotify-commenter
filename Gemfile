@@ -41,6 +41,7 @@ gem 'bootsnap', '1.3.1', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '10.0.2', platforms: [:mri, :mingw, :x64_mingw]
+  gem "rubocop", "0.58.2"
 end
 
 group :development do
