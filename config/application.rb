@@ -20,6 +20,7 @@ Bundler.require(*Rails.groups)
 
 Dotenv::Railtie.load
 
+RSpotify.pagination_info = true
 RSpotify.authenticate(
   ENV["CLIENT_ID"],
   ENV["CLIENT_SECRET"]
