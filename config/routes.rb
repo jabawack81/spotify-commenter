@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
   get "/auth/failure" => "sessions#failure"
+
+  get "/account" => "home#account"
 end
