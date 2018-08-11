@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   get "/auth/failure" => "sessions#failure"
 
   get "/account" => "home#account"
+  resources :playlists, only: %i[show destroy]
+  namespace :playlists do
+    resource :import, only: [:create]
+  end
 end

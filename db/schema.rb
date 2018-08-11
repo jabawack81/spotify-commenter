@@ -12,9 +12,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_180_801_225_236) do
+ActiveRecord::Schema.define(version: 20_180_811_184_957) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "playlists", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "spotify_id"
+    t.string "spotify_description"
+    t.string "spotify_href"
+    t.string "spotify_name"
+    t.string "spotify_uri"
+    t.string "spotify_snapshot_id"
+    t.json "spotify_images"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_playlists_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -23,4 +37,5 @@ ActiveRecord::Schema.define(version: 20_180_801_225_236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+  add_foreign_key "playlists", "users"
 end

@@ -1,4 +1,4 @@
-jQuery ->
+$(document).on "turbolinks:load", ->
   $("#playlists").dataTable
     sPaginationType: "full_numbers"
     bJQueryUI: true
