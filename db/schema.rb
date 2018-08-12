@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_180_811_184_957) do
+ActiveRecord::Schema.define(version: 2018_08_12_083246) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "playlist_tracks", force: :cascade do |t|
+    t.bigint "playlist_id"
+    t.bigint "track_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_playlist_tracks_on_playlist_id"
+    t.index ["track_id"], name: "index_playlist_tracks_on_track_id"
+  end
 
   create_table "playlists", force: :cascade do |t|
     t.bigint "user_id"
@@ -30,6 +38,18 @@ ActiveRecord::Schema.define(version: 20_180_811_184_957) do
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
+  create_table "tracks", force: :cascade do |t|
+    t.string "spotify_artist"
+    t.string "spotify_album_name"
+    t.json "spotify_album_images"
+    t.string "spotify_id"
+    t.string "spotify_href"
+    t.string "spotify_name"
+    t.string "spotify_preview_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "provider"
@@ -37,5 +57,8 @@ ActiveRecord::Schema.define(version: 20_180_811_184_957) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "playlist_tracks", "playlists"
+  add_foreign_key "playlist_tracks", "tracks"
   add_foreign_key "playlists", "users"
 end

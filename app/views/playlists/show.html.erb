@@ -1,31 +1,49 @@
-<p id="notice"><%= notice %></p>
+<dl class="row">
+  <dt class="col-sm-2">Name:</dt>
+  <dd class="col-sm-10"><%= @playlist.spotify_name %></dd>
+  <dt class="col-sm-2">Description:</dt>
+  <dd class="col-sm-10"><%= @playlist.spotify_description %></dd>
+  <dt class="col-sm-2">Link:</dt>
+  <dd class="col-sm-10"><%= link_to "Open in Spotify", @playlist.spotify_uri %></dd>
+</dl>
+<h3>Tracks</h3>
+<dl class="row">
+</dl>
+<div id="accordion">
+  <% @playlist.playlist_tracks.each do |playlist_track| %>
+    <div class="card">
+      <div class="card-header" id="heading<%= playlist_track.id %>">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= playlist_track.id %>" aria-expanded="false" aria-controls="collapse<%= playlist_track.id %>">
+            <%= playlist_track.track.spotify_name %> - <%= playlist_track.track.spotify_album_name %> by <%= playlist_track.track.spotify_artist %>
+          </button>
+        </h5>
+      </div>
 
-<p>
-  <strong>Spotify:</strong>
-  <%= @playlist.spotify_id %>
-</p>
+      <div id="collapse<%= playlist_track.id %>" class="collapse" aria-labelledby="heading<%= playlist_track.id %>" data-parent="#accordion">
+        <div class="card-body">
+          <table>
+            <tr>
+              <td>
+                <%= image_tag playlist_track.track.medium_image_url, alt: "Album cover" %>
+              </td>
+              <td rowspan="2">
+                Comments placeholders
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <audio controls>
+                  <source src="<%= playlist_track.track.spotify_preview_url %>" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </td>
+            </tr>
+          </table>
 
-<p>
-  <strong>Spotify description:</strong>
-  <%= @playlist.spotify_description %>
-</p>
 
-<p>
-  <strong>Spotify href:</strong>
-  <%= @playlist.spotify_href %>
-</p>
-
-<p>
-  <strong>Spotify name:</strong>
-  <%= @playlist.spotify_name %>
-</p>
-
-<p>
-  <strong>Spotify uri:</strong>
-  <%= @playlist.spotify_uri %>
-</p>
-
-<p>
-  <strong>Spotify images:</strong>
-  <%= @playlist.spotify_images %>
-</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

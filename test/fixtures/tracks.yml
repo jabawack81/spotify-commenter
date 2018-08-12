@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spotify_artist: 
+  spotify_album: 
+  spotify_album_images: 
+  spotify_id: 
+  spotify_href: 
+  spotify_name: MyString
+
+two:
+  spotify_artist: 
+  spotify_album: 
+  spotify_album_images: 
+  spotify_id: 
+  spotify_href: 
+  spotify_name: MyString
