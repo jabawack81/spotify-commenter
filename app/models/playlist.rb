@@ -3,8 +3,9 @@
 class Playlist < ApplicationRecord
   belongs_to :user
 
-  has_many :playlist_tracks
+  has_many :playlist_tracks, dependent: :destroy
   has_many :tracks, through: :playlist_tracks
+  has_many :comments, as: :commentable
 
   validates_uniqueness_of :spotify_id, message: "Playlist already imported"
   validates_presence_of :spotify_id,

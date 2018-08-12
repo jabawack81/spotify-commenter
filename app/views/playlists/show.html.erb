@@ -6,6 +6,16 @@
   <dt class="col-sm-2">Link:</dt>
   <dd class="col-sm-10"><%= link_to "Open in Spotify", @playlist.spotify_uri %></dd>
 </dl>
+
+<section class="comments">
+  <div class="new-comment-container">
+    <%= render "playlist_comments", comments: @playlist.comments, playlist: @playlist %>
+  </div>
+  <div class="comments-container">
+    <%= render "new_playlist_comment", comment: @playlist.comments.create, playlist: @playlist %>
+  </div>
+</section>
+
 <h3>Tracks</h3>
 <dl class="row">
 </dl>
@@ -19,7 +29,6 @@
           </button>
         </h5>
       </div>
-
       <div id="collapse<%= playlist_track.id %>" class="collapse" aria-labelledby="heading<%= playlist_track.id %>" data-parent="#accordion">
         <div class="card-body">
           <table>
@@ -28,7 +37,14 @@
                 <%= image_tag playlist_track.track.medium_image_url, alt: "Album cover" %>
               </td>
               <td rowspan="2">
-                Comments placeholders
+                <section class="comments">
+                  <div class="new-comment-container">
+                    <%= render "track_comments", comments: playlist_track.comments, playlist: @playlist, track: playlist_track  %>
+                  </div>
+                  <div class="comments-container">
+                    <%= render "new_track_comment", comment: playlist_track.comments.create, playlist: @playlist, track: playlist_track %>
+                  </div>
+                </section>
               </td>
             </tr>
             <tr>
@@ -40,8 +56,6 @@
               </td>
             </tr>
           </table>
-
-
         </div>
       </div>
     </div>

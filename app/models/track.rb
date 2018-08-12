@@ -19,7 +19,6 @@ class Track < ApplicationRecord
   end
 
   def medium_image_url
-    spotify_album_images.select{ |image| image["height"] == 300 }.first["url"]
+    spotify_album_images.select { |image| image["height"] == 300 }.first["url"]
   end
-
 end

@@ -48,11 +48,23 @@ class PlaylistsDatatable
   def action_link(id)
     imported = database_playlist.select { |playlist| playlist.spotify_id == id }.first
     if imported
-      show = link_to "Show", url_helpers.playlist_path(imported)
-      delete = link_to "Remove", url_helpers.playlist_path(imported), method: :delete, data: { remote: true, confirm: "Are you sure you want to delete this?" }
+      show = link_to  "Show",
+                      url_helpers.playlist_path(imported)
+      delete = link_to  "Remove",
+                        url_helpers.playlist_path(imported),
+                        method: :delete,
+                        data: {
+                          remote: true,
+                          confirm: "Are you sure you want to delete this?"
+                        }
       "#{show} | #{delete}"
     else
-      link_to "Import", url_helpers.playlists_import_path(spotify_id: id), method: :post, data: { remote: true }
+      link_to "Import",
+              url_helpers.import_path(spotify_id: id),
+              method: :post,
+              data: {
+                remote: true
+              }
     end
   end
 end
