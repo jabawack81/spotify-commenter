@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :playlists
+  has_many :playlists, dependent: :destroy
   validates_uniqueness_of :email
   validates_uniqueness_of :uid
 
