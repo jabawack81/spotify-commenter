@@ -10,6 +10,11 @@ class PlaylistsController < ApplicationController
   # DELETE /playlists/1
   # DELETE /playlists/1.json
   def destroy
+    respond_to do |format|
+      format.js   { render :delete_not_allowed }
+      format.html { redirect_to playlists_url, error: "User can delete only owned playlists" }
+      format.json { head :no_content }
+    end && return if !current_user.owns?(@playlist)
     @playlist.destroy
     respond_to do |format|
       format.js

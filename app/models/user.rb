@@ -12,6 +12,10 @@ class User < ApplicationRecord
     end
   end
 
+  def owns?(element)
+    element.user_id == id
+  end
+
   def spotify_playlists(limit, offset)
     RSpotify::User.find(uid).playlists(limit: limit, offset: offset)
   end
