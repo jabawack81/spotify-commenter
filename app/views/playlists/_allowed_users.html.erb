@@ -1,0 +1,15 @@
+<div class="allowed-user-container">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="playlist-allowed-users">
+      <% playlist.user_allowed_playlists.each do |user_allowed_playlist| %>
+        <%= render "allowed_user", user_allowed_playlist: user_allowed_playlist %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

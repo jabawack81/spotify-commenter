@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get "/auth/failure" => "sessions#failure"
 
   get "/account" => "home#account"
-  resources :playlists, only: %i[show destroy] do
+  resources :playlists, only: %i[index show destroy] do
+    resources :allowed_users, only: %i[create destroy], module: "playlists"
     resources :comments, only: %i[create destroy], module: "playlists"
     resources :tracks, only: %i[show], module: "playlists" do
       resources :comments, only: %i[create destroy], module: "tracks"

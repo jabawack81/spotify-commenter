@@ -1,13 +1,15 @@
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody id="playlist-comments">
-    <% comments.each do |comment| %>
-      <%= render "comment", comment: comment %>
-    <% end %>
-  </tbody>
-</table>
+<div class="comments-container">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="playlist-comments">
+      <% comments.each do |comment| %>
+        <%= render "comment", comment: comment %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

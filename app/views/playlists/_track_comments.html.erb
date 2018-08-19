@@ -1,13 +1,15 @@
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody id="track-<%= track.id %>-comments">
-    <% comments.each do |comment| %>
-      <%= render "comment", comment: comment %>
-    <% end %>
-  </tbody>
-</table>
+<div class="new-comment-container">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="track-<%= track.id %>-comments">
+      <% comments.each do |comment| %>
+        <%= render "comment", comment: comment %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

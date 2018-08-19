@@ -1,20 +1,37 @@
-<dl class="row">
-  <dt class="col-sm-2">Name:</dt>
-  <dd class="col-sm-10"><%= @playlist.spotify_name %></dd>
-  <dt class="col-sm-2">Description:</dt>
-  <dd class="col-sm-10"><%= @playlist.spotify_description %></dd>
-  <dt class="col-sm-2">Link:</dt>
-  <dd class="col-sm-10"><%= link_to "Open in Spotify", @playlist.spotify_uri %></dd>
-</dl>
-
-<section class="comments">
-  <div class="new-comment-container">
-    <%= render "playlist_comments", comments: @playlist.comments, playlist: @playlist %>
+<h3>Title: <%= @playlist.spotify_name %></h3>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-about-tab"data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about"aria-selected="true">About</a>
+    <a class="nav-item nav-link" id="nav-comments-tab" data-toggle="tab" href="#nav-comments"role="tab" aria-controls="nav-comments" aria-selected="false">Comments</a>
+    <% if current_user.owns?(@playlist) %>
+      <a class="nav-item nav-link" id="nav-allowed-tab"data-toggle="tab" href="#nav-allowed" role="tab" aria-controls="nav-allowed"aria-selected="false">Allowed Users</a>
+    <% end %>
   </div>
-  <div class="comments-container">
-    <%= render "new_playlist_comment", comment: @playlist.comments.create, playlist: @playlist %>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active"id="nav-about"role="tabpanel" aria-labelledby="nav-about-tab">
+    <dl class="row">
+      <dt class="col-sm-2">Description:</dt>
+      <dd class="col-sm-10"><%= @playlist.spotify_description %></dd>
+      <dt class="col-sm-2">Link:</dt>
+      <dd class="col-sm-10"><%= link_to "Open in Spotify", @playlist.spotify_uri %></dd>
+      <dt class="col-sm-2">Owner:</dt>
+      <dd class="col-sm-10"><%= @playlist.user.name %></dd>
+    </dl>
   </div>
-</section>
+  <div class="tab-pane fade" id="nav-comments" role="tabpanel" aria-labelledby="nav-comments-tab">
+    <section class="comments">
+      <%= render "playlist_comments", comments: @playlist.comments, playlist: @playlist %>
+      <%= render "new_playlist_comment", comment: @playlist.comments.create, playlist: @playlist %>
+    </section>
+  </div>
+  <% if current_user.owns?(@playlist) %>
+    <div class="tab-pane fade" id="nav-allowed"role="tabpanel" aria-labelledby="nav-allowed-tab">
+      <%= render "allowed_users", playlist: @playlist %>
+      <%= render "new_allowed_users", playlist: @playlist %>
+    </div>
+  <% end %>
+</div>
 
 <h3>Tracks</h3>
 <dl class="row">
@@ -38,12 +55,8 @@
               </td>
               <td rowspan="2">
                 <section class="comments">
-                  <div class="new-comment-container">
-                    <%= render "track_comments", comments: playlist_track.comments, playlist: @playlist, track: playlist_track  %>
-                  </div>
-                  <div class="comments-container">
-                    <%= render "new_track_comment", comment: playlist_track.comments.create, playlist: @playlist, track: playlist_track %>
-                  </div>
+                  <%= render "track_comments", comments: playlist_track.comments, playlist: @playlist, track: playlist_track  %>
+                  <%= render "new_track_comment", comment: playlist_track.comments.create, playlist: @playlist, track: playlist_track %>
                 </section>
               </td>
             </tr>

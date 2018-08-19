@@ -1,4 +1,6 @@
-<%= form_for comment, remote: true, url: playlist_track_comments_path(playlist_id: playlist.id, track_id: track.id) do |form|%>
-  <%= form.text_field :body, id: "track-#{track.id}-comment-body" %>
-  <%= form.submit :save %>
-<% end %>
+<div class="comments-container">
+  <%= form_for comment, remote: true, url: playlist_track_comments_path(playlist_id: playlist.id, track_id: track.id) do |form|%>
+    <%= form.text_field :body, id: "track-#{track.id}-comment-body" %>
+    <%= form.submit :save %>
+  <% end %>
+</div>

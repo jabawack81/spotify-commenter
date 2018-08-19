@@ -1,0 +1,6 @@
+<div class="comments-container">
+  <%= form_for playlist.user_allowed_playlists.create, remote: true, url: playlist_allowed_users_path(playlist_id: playlist.id) do |form|%>
+    <%= form.text_field :user_id, id: "new-allowed-user-input" %>
+    <%= form.submit :save %>
+  <% end %>
+</div>
