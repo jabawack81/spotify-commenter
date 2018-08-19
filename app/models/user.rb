@@ -2,6 +2,9 @@
 
 class User < ApplicationRecord
   has_many :playlists, dependent: :destroy
+  has_many :user_allowed_playlists, dependent: :destroy
+  has_many :allowed_playlists, through: :user_allowed_playlists, source: :playlist
+
   validates_uniqueness_of :email
   validates_uniqueness_of :uid
 
