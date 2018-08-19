@@ -18,11 +18,13 @@ class Playlists::CommentsController < ApplicationController
   end
 
   def destroy
-    respond_to do |format|
-      format.js   { render :delete_not_allowed }
-      format.html { redirect_to playlists_url, error: "User can delete only owned playlists" }
-      format.json { head :no_content }
-    end && return if !current_user.owns?(@playlist)
+    unless current_user.owns?(@playlist)
+      respond_to do |format|
+        format.js   { render :delete_not_allowed }
+        format.html { redirect_to playlists_url, error: "User can delete only own comments" }
+        format.json { head :no_content }
+      end && return
+    end
     @comment.destroy
     respond_to do |format|
       format.js
