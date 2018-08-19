@@ -2,19 +2,25 @@
 
 class PlaylistsController < ApplicationController
   before_action :set_playlist, only: %i[show destroy]
+  before_action :authenticate_user!
 
-  # GET /playlists/1
-  # GET /playlists/1.json
+  def index
+    respond_to do |format|
+      format.html
+      format.json { render json: ImportedPlaylistsForUserDatatable.new(view_context, current_user) }
+    end
+  end
+
   def show; end
 
-  # DELETE /playlists/1
-  # DELETE /playlists/1.json
   def destroy
-    respond_to do |format|
-      format.js   { render :delete_not_allowed }
-      format.html { redirect_to playlists_url, error: "User can delete only owned playlists" }
-      format.json { head :no_content }
-    end && return if !current_user.owns?(@playlist)
+    unless current_user.owns?(@playlist)
+      respond_to do |format|
+        format.js   { render :delete_not_allowed }
+        format.html { redirect_to playlists_url, error: "User can delete only owned playlists" }
+        format.json { head :no_content }
+      end && return
+    end
     @playlist.destroy
     respond_to do |format|
       format.js

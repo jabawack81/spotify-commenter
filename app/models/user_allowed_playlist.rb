@@ -11,7 +11,7 @@ class UserAllowedPlaylist < ApplicationRecord
   private
 
   def not_allow_owner
-    return unless user_id != playlist.user_id
+    return if user_id != playlist.user_id
     errors.add(:user_id, "User already own the playlist and cannot be allowed")
   end
 end

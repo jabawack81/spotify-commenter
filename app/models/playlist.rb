@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Playlist < ApplicationRecord
+  scope :allowed_or_owned_by_user, ->(user) {
+    joins("LEFT JOIN \"user_allowed_playlists\" ON \"user_allowed_playlists\".\"playlist_id\" = \"playlists\".\"id\"")
+      .where("\"playlists\".\"user_id\" = :id OR \"user_allowed_playlists\".\"user_id\" = :id", id: user.id)
+  }
   belongs_to :user
 
   has_many :playlist_tracks, dependent: :destroy
