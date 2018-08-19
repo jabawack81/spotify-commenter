@@ -6,12 +6,23 @@ class User < ApplicationRecord
   validates_uniqueness_of :uid
 
   def self.create_with_omniauth(auth)
-    create! do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.display_name || "" if auth["info"]
-      user.avatar = auth.info.images.first.url
+    in_db = find_by_email(auth.info.email)
+    if in_db
+      in_db.update_attributes(
+        provider: auth.provider,
+        uid: auth.uid,
+        name: auth.info.display_name,
+        avatar: auth.info.images.first&.url
+      )
+      in_db
+    else
+      create! do |user|
         user.email = auth.info.email
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.name = auth.info.display_name
+        user.avatar = auth.info.images.first&.url
+      end
     end
   end
 
