@@ -3,6 +3,7 @@
 class Playlists::CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_playlist
+  before_action :set_comment, only: %i[destroy]
 
   def create
     @comment = @playlist.comments.new(
@@ -17,7 +18,12 @@ class Playlists::CommentsController < ApplicationController
   end
 
   def destroy
-    @playlist.destroy
+    respond_to do |format|
+      format.js   { render :delete_not_allowed }
+      format.html { redirect_to playlists_url, error: "User can delete only owned playlists" }
+      format.json { head :no_content }
+    end && return if !current_user.owns?(@playlist)
+    @comment.destroy
     respond_to do |format|
       format.js
       format.html
@@ -30,5 +36,9 @@ class Playlists::CommentsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_playlist
     @playlist = Playlist.find(params[:playlist_id])
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 end
