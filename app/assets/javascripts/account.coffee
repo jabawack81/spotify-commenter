@@ -1,10 +1,10 @@
 $(document).on "turbolinks:load", ->
-  $("#playlists").dataTable
+  $("#account-playlists").dataTable
     sPaginationType: "full_numbers"
     bJQueryUI: true
     bProcessing: true
     bServerSide: true
-    sAjaxSource: $("#playlists").data("source")
+    sAjaxSource: $("#account-playlists").data("source")
     aoColumns: [
       {
         sTitle: "Name"
