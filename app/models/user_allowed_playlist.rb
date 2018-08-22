@@ -6,12 +6,12 @@ class UserAllowedPlaylist < ApplicationRecord
 
   validate :not_allow_owner
 
-  validates :user, uniqueness: { scope: :playlist }
+  validates :user, uniqueness: { scope: :playlist, message: "already allowed in the playlist" }
 
   private
 
   def not_allow_owner
     return if user_id != playlist.user_id
-    errors.add(:user_id, "User already own the playlist and cannot be allowed")
+    errors.add(:user_id, "already own the playlist and cannot be allowed")
   end
 end

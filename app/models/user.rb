@@ -39,6 +39,10 @@ class User < ApplicationRecord
     RSpotify::User.find(uid).playlists(limit: limit, offset: offset)
   end
 
+  def display_name
+    name || email
+  end
+
   private
 
   def uid?

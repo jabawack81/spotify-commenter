@@ -6,7 +6,8 @@ class Playlists::AllowedUsersController < ApplicationController
   before_action :set_allowed_user, only: %i[destroy]
 
   def create
-    @allowed_user = @playlist.user_allowed_playlists.new(user_allowed_playlists_params)
+    user = User.find_or_create_by(email: params[:email])
+    @allowed_user = @playlist.user_allowed_playlists.new(user: user)
     if @allowed_user.save
       render :success
     else
