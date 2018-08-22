@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   validates_presence_of :email
 
+  after_create :send_invitation_email, if: :invited
+
+  attr_accessor :invited
+
   def self.create_with_omniauth(auth)
     in_db = find_by_email(auth.info.email)
     if in_db
@@ -44,6 +48,10 @@ class User < ApplicationRecord
   end
 
   private
+
+  def send_invitation_email
+    NotificationMailer.invite(self).deliver_now
+  end
 
   def uid?
     !uid.nil?
