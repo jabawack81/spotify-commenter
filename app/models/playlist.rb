@@ -2,8 +2,11 @@
 
 class Playlist < ApplicationRecord
   scope :allowed_or_owned_by_user, ->(user) {
-    joins("LEFT JOIN \"user_allowed_playlists\" ON \"user_allowed_playlists\".\"playlist_id\" = \"playlists\".\"id\"")
-      .where("\"playlists\".\"user_id\" = :id OR \"user_allowed_playlists\".\"user_id\" = :id", id: user.id)
+      where(
+        user_id: user.id
+      ).or(
+        where(id: user.user_allowed_playlists.pluck(:playlist_id))
+      )
   }
   belongs_to :user
 
