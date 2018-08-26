@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   root "home#index"
+  get "invite/:invite_code" => "home#invite", as: :invite
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
   get "/auth/failure" => "sessions#failure"

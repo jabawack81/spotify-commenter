@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_19_093824) do
+ActiveRecord::Schema.define(version: 2018_08_21_175701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,11 @@ ActiveRecord::Schema.define(version: 2018_08_19_093824) do
     t.datetime "updated_at", null: false
     t.string "avatar"
     t.string "email"
+    t.bigint "user_id"
+    t.string "invite_email"
+    t.string "invitation_code"
+    t.index ["invitation_code"], name: "index_users_on_invitation_code"
+    t.index ["user_id"], name: "index_users_on_user_id"
   end
 
   add_foreign_key "comments", "users"
@@ -85,4 +90,5 @@ ActiveRecord::Schema.define(version: 2018_08_19_093824) do
   add_foreign_key "playlists", "users"
   add_foreign_key "user_allowed_playlists", "playlists"
   add_foreign_key "user_allowed_playlists", "users"
+  add_foreign_key "users", "users"
 end

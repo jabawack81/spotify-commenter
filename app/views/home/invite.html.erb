@@ -1,0 +1,17 @@
+<div class="row">
+  <% if @invited_user %>
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-5">Hi</h1>
+      <p class="lead">the user <%= @invited_user.inviter.name %> has invited you to comment on his playlist</p>
+      <% @invited_user.allowed_playlists.each do |playlist| %>
+        <p><%= playlist.spotify_name %></p>
+      <% end %>
+        <li class="nav-item"><a class="nav-link" href="/auth/spotify?invite=<%= @invite %>">Sign In</a></li>
+    </div>
+  <% else %>
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-5">Hi</h1>
+      <p class="lead">invite not valid sorry</p>
+    </div>
+  <% end %>
+</div>

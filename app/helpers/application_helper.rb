@@ -6,9 +6,10 @@ module ApplicationHelper
     case key
     when "notice"
       "alert-success"
+    when "alert"
+      "alert-warning"
     else
       "alert-#{key}"
-      # "alert-warning"
       # "alert-info"
       # "alert-warning"
       # "alert-danger"
