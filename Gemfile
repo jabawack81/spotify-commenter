@@ -61,7 +61,7 @@ group :test do
   gem "capybara", "3.4.2"
   gem "selenium-webdriver", "3.13.1"
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem "chromedriver-helper", "1.2.0"
+  gem "chromedriver-helper", "2.1.1"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
