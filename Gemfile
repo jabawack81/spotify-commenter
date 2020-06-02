@@ -10,13 +10,13 @@ gem "rails", "5.2.4.2"
 # Use postgresql as the database for Active Record
 gem "pg", "1.2.3"
 # Use Puma as the app server
-gem "puma", "4.3.3"
+gem "puma", "4.3.5"
 # Use SCSS for stylesheets
 gem "sass-rails", "6.0.0"
 # Use Uglifier as compressor for JavaScript assets
 gem "uglifier", "4.2.0"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem "webpacker", "5.0.1"
+gem "webpacker", "5.1.1"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
@@ -42,9 +42,9 @@ gem "bootsnap", "1.4.6", require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem "byebug", "11.1.1", platforms: %i[mri mingw x64_mingw]
+  gem "byebug", "11.1.3", platforms: %i[mri mingw x64_mingw]
   gem "dotenv-rails", "2.7.5"
-  gem "rubocop", "0.82.0"
+  gem "rubocop", "0.85.0"
 end
 
 group :development do
@@ -58,7 +58,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem "capybara", "3.32.1"
+  gem "capybara", "3.32.2"
   gem "selenium-webdriver", "3.142.7"
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem "chromedriver-helper", "2.1.1"
