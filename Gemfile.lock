@@ -98,7 +98,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.7)
     crass (1.0.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -116,7 +116,7 @@ GEM
     hashie (4.1.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (1.8.3)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
     jbuilder (2.10.0)
@@ -271,7 +271,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webpacker (5.1.1)
+    webpacker (5.2.0)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
@@ -282,7 +282,7 @@ GEM
     will_paginate (3.3.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.3.1)
+    zeitwerk (2.4.0)
 
 PLATFORMS
   ruby
@@ -311,7 +311,7 @@ DEPENDENCIES
   tzinfo-data (= 1.2.5)
   uglifier (= 4.2.0)
   web-console (= 4.0.4)
-  webpacker (= 5.1.1)
+  webpacker (= 5.2.0)
   will_paginate (= 3.3.0)
 
 RUBY VERSION
