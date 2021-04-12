@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.5.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "6.1.3"
+gem "rails", "6.1.3.1"
 # Use postgresql as the database for Active Record
 gem "pg", "1.2.3"
 # Use Puma as the app server
@@ -44,12 +44,12 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", "11.1.3", platforms: %i[mri mingw x64_mingw]
   gem "dotenv-rails", "2.7.6"
-  gem "rubocop", "1.11.0"
+  gem "rubocop", "1.12.1"
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem "listen", "3.4.1"
+  gem "listen", "3.5.1"
   gem "web-console", "4.1.0"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring", "2.1.1"
