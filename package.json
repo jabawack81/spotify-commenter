@@ -6,7 +6,7 @@
     "bootstrap": "^4.6.0",
     "datatables": "^1.10.18",
     "jquery": "^3.6.0",
-    "snyk": "^1.652.0"
+    "snyk": "^1.667.0"
   },
   "devDependencies": {
     "webpack-dev-server": "3.11.2"
