@@ -2,14 +2,14 @@
   "name": "spotify-commenter",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "5.4.0",
+    "@rails/webpacker": "5.4.2",
     "bootstrap": "^4.6.0",
     "datatables": "^1.10.18",
     "jquery": "^3.6.0",
-    "snyk": "^1.651.0"
+    "snyk": "^1.667.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "3.11.2"
+    "webpack-dev-server": "4.0.0"
   },
   "scripts": {
     "snyk-protect": "snyk protect",
