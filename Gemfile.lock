@@ -151,7 +151,7 @@ GEM
     multipart-post (2.1.1)
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.12.3)
+    nokogiri (1.12.4)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     oauth2 (1.4.4)
@@ -278,7 +278,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webpacker (5.4.2)
+    webpacker (5.4.3)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
@@ -318,7 +318,7 @@ DEPENDENCIES
   tzinfo-data (= 1.2.5)
   uglifier (= 4.2.0)
   web-console (= 4.1.0)
-  webpacker (= 5.4.2)
+  webpacker (= 5.4.3)
   will_paginate (= 3.3.1)
 
 RUBY VERSION
