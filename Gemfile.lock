@@ -123,7 +123,7 @@ GEM
     hashie (4.1.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (1.8.10)
+    i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
     jbuilder (2.11.2)
@@ -178,7 +178,7 @@ GEM
     public_suffix (3.1.1)
     puma (5.5.0)
       nio4r (~> 2.0)
-    racc (1.5.2)
+    racc (1.6.0)
     rack (2.2.3)
     rack-proxy (0.7.0)
       rack
@@ -273,7 +273,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (2.1.0)
-    web-console (4.1.0)
+    web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -289,7 +289,7 @@ GEM
     will_paginate (3.3.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   ruby
@@ -317,7 +317,7 @@ DEPENDENCIES
   turbolinks (= 5.2.1)
   tzinfo-data (= 1.2.5)
   uglifier (= 4.2.0)
-  web-console (= 4.1.0)
+  web-console (= 4.2.0)
   webpacker (= 5.4.3)
   will_paginate (= 3.3.1)
 
