@@ -10,7 +10,7 @@ gem "rails", "6.1.4.2"
 # Use postgresql as the database for Active Record
 gem "pg", "1.2.3"
 # Use Puma as the app server
-gem "puma", "5.5.0"
+gem "puma", "5.5.2"
 # Use SCSS for stylesheets
 gem "sass-rails", "6.0.0"
 # Use Uglifier as compressor for JavaScript assets
@@ -50,7 +50,7 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem "listen", "3.7.0"
-  gem "web-console", "4.1.0"
+  gem "web-console", "4.2.0"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring", "2.1.1"
   gem "spring-watcher-listen", "2.0.1"
