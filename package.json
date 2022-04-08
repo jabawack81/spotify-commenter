@@ -3,13 +3,13 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "5.4.3",
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^4.6.1",
     "datatables": "^1.10.18",
     "jquery": "^3.6.0",
     "snyk": "^1.889.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "4.7.4"
+    "webpack-dev-server": "4.8.1"
   },
   "scripts": {
     "snyk-protect": "snyk protect",
