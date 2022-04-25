@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/jabawack81/rspotify.git
-  revision: 45a4d5cf5c16054e30f9290296e24c85af3c6497
+  revision: 1c7ae24b541ae72a29d810398b9a871f1bf150c0
   specs:
-    rspotify (2.7.0)
-      addressable (~> 2.5.2)
-      omniauth-oauth2 (~> 1.5.0)
+    rspotify (2.11.1)
+      addressable (~> 2.8.0)
+      omniauth-oauth2 (>= 1.6)
       rest-client (~> 2.0.2)
 
 GEM
@@ -72,8 +72,8 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     ast (2.4.2)
@@ -179,12 +179,13 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
-    omniauth (1.9.1)
+    omniauth (2.1.0)
       hashie (>= 3.4.6)
-      rack (>= 1.6.2, < 3)
-    omniauth-oauth2 (1.5.0)
-      oauth2 (~> 1.1)
-      omniauth (~> 1.2)
+      rack (>= 2.2.3)
+      rack-protection
+    omniauth-oauth2 (1.7.2)
+      oauth2 (~> 1.4)
+      omniauth (>= 1.9, < 3)
     parallel (1.22.1)
     parser (3.1.1.0)
       ast (~> 2.4.1)
@@ -194,11 +195,13 @@ GEM
       method_source (~> 1.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
-    public_suffix (3.1.1)
+    public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+    rack-protection (2.2.0)
+      rack
     rack-proxy (0.7.2)
       rack
     rack-test (1.1.0)
