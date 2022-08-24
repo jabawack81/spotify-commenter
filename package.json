@@ -9,7 +9,7 @@
     "snyk": "^1.990.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "4.9.3"
+    "webpack-dev-server": "4.10.0"
   },
   "scripts": {
     "snyk-protect": "snyk protect",
