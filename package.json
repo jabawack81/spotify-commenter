@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "5.4.3",
-    "bootstrap": "^5.1.3",
+    "bootstrap": "^5.2.0",
     "datatables": "^1.10.18",
     "jquery": "^3.6.0",
     "snyk": "^1.990.0"
