@@ -2,7 +2,7 @@
   "name": "spotify-commenter",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "5.4.3",
+    "@rails/webpacker": "5.4.4",
     "bootstrap": "^5.2.3",
     "datatables": "^1.10.18",
     "jquery": "^3.6.1",
