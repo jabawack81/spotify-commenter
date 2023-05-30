@@ -70,4 +70,4 @@ gem "tzinfo-data", "1.2.5", platforms: %i[mingw mswin x64_mingw jruby]
 gem "active_link_to", "1.0.5"
 gem "pry-rails", "0.3.9"
 gem "rspotify", git: "https://github.com/jabawack81/rspotify.git"
-gem "will_paginate", "3.3.1"
+gem "will_paginate", "4.0.0"
