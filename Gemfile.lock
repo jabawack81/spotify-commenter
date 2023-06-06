@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jabawack81/rspotify.git
-  revision: 1c7ae24b541ae72a29d810398b9a871f1bf150c0
+  revision: 3ed1c4492963ee837236b1cd7ff9d1a7398a0387
   specs:
     rspotify (2.11.1)
       addressable (~> 2.8.0)
@@ -72,7 +72,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    addressable (2.8.1)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
@@ -112,7 +112,7 @@ GEM
       railties (>= 3.2)
     erubi (1.11.0)
     execjs (2.8.1)
-    faraday (1.10.2)
+    faraday (1.10.3)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -147,7 +147,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    jwt (2.5.0)
+    jwt (2.7.0)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -160,13 +160,13 @@ GEM
     method_source (1.0.0)
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2022.0105)
+    mime-types-data (3.2023.0218.1)
     mini_mime (1.1.2)
     mini_portile2 (2.6.1)
     minitest (5.15.0)
     msgpack (1.5.4)
     multi_xml (0.6.0)
-    multipart-post (2.2.3)
+    multipart-post (2.3.0)
     netrc (0.11.0)
     nio4r (2.5.9)
     nokogiri (1.12.5)
@@ -179,7 +179,7 @@ GEM
       rack (>= 1.2, < 4)
       snaky_hash (~> 2.0)
       version_gem (~> 1.1)
-    omniauth (2.1.0)
+    omniauth (2.1.1)
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
@@ -199,8 +199,8 @@ GEM
     puma (6.2.2)
       nio4r (~> 2.0)
     racc (1.6.2)
-    rack (2.2.4)
-    rack-protection (2.2.2)
+    rack (2.2.7)
+    rack-protection (2.2.4)
       rack
     rack-proxy (0.7.4)
       rack
@@ -298,7 +298,7 @@ GEM
       unf_ext
     unf_ext (0.0.8.2)
     unicode-display_width (2.1.0)
-    version_gem (1.1.1)
+    version_gem (1.1.3)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
