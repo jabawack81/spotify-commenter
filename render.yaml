@@ -1,7 +1,7 @@
 databases:
   - name: spotify-commenter
-    databaseName: spotify-commenter
-    user: spotify-commenter
+    databaseName: spotifycommenter
+    user: spotifycommenter
     plan: free
 
 services:
