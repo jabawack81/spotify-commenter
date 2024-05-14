@@ -5,8 +5,8 @@ require "rspotify/oauth"
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider(
     :spotify,
-    ENV["CLIENT_ID"],
-    ENV["CLIENT_SECRET"],
+    Rails.application.credentials.spotify[:client_id],
+    Rails.application.credentials.spotify[:client_secret],
     scope: %w[
       playlist-read-private
       playlist-read-collaborative

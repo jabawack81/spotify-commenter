@@ -22,8 +22,8 @@ Dotenv::Railtie.load if Rails.env.development?
 
 RSpotify.pagination_info = true
 RSpotify.authenticate(
-  ENV["CLIENT_ID"],
-  ENV["CLIENT_SECRET"]
+  Rails.application.credentials.spotify[:client_id],
+  Rails.application.credentials.spotify[:client_secret]
 )
 
 module SpotifyCommenter
