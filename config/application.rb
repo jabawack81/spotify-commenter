@@ -20,12 +20,6 @@ Bundler.require(*Rails.groups)
 
 Dotenv::Railtie.load if Rails.env.development?
 
-RSpotify.pagination_info = true
-RSpotify.authenticate(
-  Rails.application.credentials.spotify[:client_id],
-  Rails.application.credentials.spotify[:client_secret]
-)
-
 module SpotifyCommenter
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
