@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  def new
+    render :new
+  end
+
   def create
     params = request.env["omniauth.params"]
     auth = request.env["omniauth.auth"]

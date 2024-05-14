@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
   get "/auth/failure" => "sessions#failure"
+  get "/login", to: "sessions#new"
 
   get "/account" => "home#account"
   resources :playlists, only: %i[index show destroy] do
