@@ -6,7 +6,11 @@
       <% @invited_user.allowed_playlists.each do |playlist| %>
         <p><%= playlist.spotify_name %></p>
       <% end %>
-        <li class="nav-item"><a class="nav-link" href="/auth/spotify?invite=<%= @invite %>">Sign In</a></li>
+      <li class="nav-item">
+        <%= form_tag("/auth/spotify?invite=#{@invite}", method: 'post', data: {turbo: false}) do %>
+          <div><%= submit_tag "Login" %></div>
+        <% end %>
+      </li>
     </div>
   <% else %>
     <div class="col-lg-12 text-center">
